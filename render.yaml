@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: campusflow
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python -m backend.main
+    healthCheckPath: /health
+    envVars:
+      - key: CAMPUSFLOW_HOST
+        value: 0.0.0.0
+      - key: CAMPUSFLOW_PORT
+        value: 10000
